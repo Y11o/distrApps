@@ -28,9 +28,9 @@ public class CholecystitisController {
     @GetMapping("/{patientId}/{complication}")
     public ResponseEntity<?> getCholecystitis(@PathVariable("hospitalName") String hospitalName,
                                               @PathVariable("patientId") Integer patientId,
-                                              @PathVariable("complication") String complication) {
-        return ResponseEntity.ok(cholecystitisService.getByHospitalNameAndComplicationAndPatientId(
-                hospitalName, complication, patientId
+                                              @PathVariable("complication") String complications) {
+        return ResponseEntity.ok(cholecystitisService.getByHospitalNameAndComplicationsAndPatientId(
+                hospitalName, complications, patientId
         ));
     }
 
@@ -52,10 +52,10 @@ public class CholecystitisController {
 
     @ExceptionHandler(value = ItemNotFoundException.class)
     public ResponseEntity<?> handleItemNotFoundException(ItemNotFoundException e) {
-        ErrorResponse response = new ErrorResponse(
-                e.getMessage(),
-                System.currentTimeMillis()
-        );
+        ErrorResponse response = new ErrorResponse.Builder()
+                .setMessage(e.getMessage())
+                .setTimestamp(System.currentTimeMillis())
+                .build();
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
 }

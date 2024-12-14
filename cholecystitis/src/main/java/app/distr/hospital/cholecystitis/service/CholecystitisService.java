@@ -38,10 +38,10 @@ public class CholecystitisService {
         return cholecystitisRepository.findAll();
     }
 
-    public List<Cholecystitis> getByHospitalNameAndComplicationAndPatientId(String hospitalName,
-                                                                            String complication, Integer patientId) {
-        return cholecystitisRepository.findByHospitalNameAndComplicationAndPatientId(
-                hospitalName, complication, patientId
+    public List<Cholecystitis> getByHospitalNameAndComplicationsAndPatientId(String hospitalName,
+                                                                            String complications, Integer patientId) {
+        return cholecystitisRepository.findByHospitalNameAndComplicationsAndPatientId(
+                hospitalName, complications, patientId
         );
     }
 
