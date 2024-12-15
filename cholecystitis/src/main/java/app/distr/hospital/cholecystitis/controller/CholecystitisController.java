@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Locale;
+
 @RestController
 @RequestMapping(value = "/hospitals/{hospitalName}/cholecystitis")
 public class CholecystitisController {
@@ -36,18 +38,24 @@ public class CholecystitisController {
 
     @PostMapping
     public ResponseEntity<?> createCholecystitis(@PathVariable("hospitalName") String hospitalName,
-                                                 @RequestBody Cholecystitis request) {
-        return ResponseEntity.ok(cholecystitisService.createCholecystitis(request, hospitalName));
+                                                 @RequestBody Cholecystitis request,
+                                                 @RequestHeader(value = "Accept-Language",required = false,
+                                                         defaultValue = "en") Locale locale) {
+        return ResponseEntity.ok(cholecystitisService.createCholecystitis(request, hospitalName, locale));
     }
 
     @PutMapping
-    public ResponseEntity<?> updateCholecystitis(@RequestBody Cholecystitis request) {
-        return ResponseEntity.ok(cholecystitisService.updateCholecystitis(request));
+    public ResponseEntity<?> updateCholecystitis(@RequestBody Cholecystitis request,
+                                                 @RequestHeader(value = "Accept-Language",required = false,
+                                                         defaultValue = "en") Locale locale) {
+        return ResponseEntity.ok(cholecystitisService.updateCholecystitis(request, locale));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteById(@PathVariable("id") Integer id) {
-        return ResponseEntity.ok(cholecystitisService.delete(id));
+    public ResponseEntity<?> deleteById(@PathVariable("id") Integer id,
+                                        @RequestHeader(value = "Accept-Language",required = false,
+                                                defaultValue = "en") Locale locale) {
+        return ResponseEntity.ok(cholecystitisService.delete(id, locale));
     }
 
     @ExceptionHandler(value = ItemNotFoundException.class)
