@@ -2,6 +2,7 @@ package app.distr.hospital.cholecystitis.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.hateoas.RepresentationModel;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -11,7 +12,7 @@ import lombok.*;
 @ToString
 @Entity
 @Table(name = "cholecystitis")
-public class Cholecystitis {
+public class Cholecystitis extends RepresentationModel<Cholecystitis> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
