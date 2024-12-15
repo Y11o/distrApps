@@ -1,5 +1,6 @@
 package app.distr.hospital.cholecystitis.service;
 
+import app.distr.hospital.cholecystitis.config.ServiceConfig;
 import app.distr.hospital.cholecystitis.controller.CholecystitisController;
 import app.distr.hospital.cholecystitis.model.Cholecystitis;
 import app.distr.hospital.cholecystitis.repository.CholecystitisRepository;
@@ -23,17 +24,20 @@ public class CholecystitisService {
 
     private final MessageSource messages;
 
+    private final ServiceConfig serviceConfig;
+
     @Autowired
-    public CholecystitisService(CholecystitisRepository cholecystitisRepository, MessageSource messages) {
+    public CholecystitisService(CholecystitisRepository cholecystitisRepository, MessageSource messages, ServiceConfig serviceConfig) {
         this.cholecystitisRepository = cholecystitisRepository;
         this.messages = messages;
+        this.serviceConfig = serviceConfig;
     }
 
     public String createCholecystitis(Cholecystitis request, String hospitalName, Locale locale) {
         request.setHospitalName(hospitalName);
 
         return String.format(messages.getMessage("cholecystitis.create.message", null, locale),
-                this.save(request).toString());
+                this.save(request).withComment(serviceConfig.getProperty()).toString());
     }
 
     public String updateCholecystitis(Cholecystitis request, Locale locale) {
@@ -42,7 +46,7 @@ public class CholecystitisService {
                         messages.getMessage("cholecystitis.not_found.message", null, locale), request.getId()))
         );
         return String.format(messages.getMessage("cholecystitis.update.message", null, locale),
-                this.save(request).toString());
+                this.save(request).withComment(serviceConfig.getProperty()).toString());
     }
 
     public List<Cholecystitis> getAll(Locale locale) {
@@ -57,7 +61,7 @@ public class CholecystitisService {
         List<Cholecystitis> cholecystitis = cholecystitisRepository.findByHospitalNameAndComplicationsContainingAndPatientId(
                 hospitalName, complications, patientId
         );
-        cholecystitis.stream().map(ch -> mountLinks(ch, locale)).collect(Collectors.toList());
+        cholecystitis.stream().map(ch -> mountLinks(ch, locale)).map(ch -> ch.withComment(serviceConfig.getProperty())).collect(Collectors.toList());
         return cholecystitis;
     }
 

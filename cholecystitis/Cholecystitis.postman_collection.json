@@ -10,7 +10,13 @@
 			"name": "All",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "pl",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "localhost:8080/hospitals/mariinsky/cholecystitis",
 					"host": [
@@ -30,7 +36,13 @@
 			"name": "By patientId and complication",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "pl",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "localhost:8080/hospitals/mariinsky/cholecystitis/152/нет",
 					"host": [
@@ -492,6 +504,334 @@
 					"body": "{\n    \"message\": \"Сholecystitis with id: 1 was not found!\",\n    \"timestamp\": 1734225190813\n}"
 				}
 			]
+		},
+		{
+			"name": "Actuator Endpoints",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "pl",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/actuator",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator Health",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "pl",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/actuator/health",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator Info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "pl",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/actuator/info",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator Env",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "pl",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/actuator/env",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"env"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator Beans",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "pl",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/actuator/beans",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"beans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator Metrics",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "pl",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/actuator/metrics",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"metrics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator Metrics ApplicationStartedTime",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "pl",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/actuator/metrics/application.started.time",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"metrics",
+						"application.started.time"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator Metrics HTTPServerReq",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "pl",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/actuator/metrics/http.server.requests",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"metrics",
+						"http.server.requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator Metrics SystCPUCount",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "pl",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/actuator/metrics/system.cpu.count",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"metrics",
+						"system.cpu.count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ConfServ DEFAULT",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "pl",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8071/cholecystitis/default",
+					"host": [
+						"localhost"
+					],
+					"port": "8071",
+					"path": [
+						"cholecystitis",
+						"default"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ConfServ DEV",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "pl",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8071/cholecystitis/dev",
+					"host": [
+						"localhost"
+					],
+					"port": "8071",
+					"path": [
+						"cholecystitis",
+						"dev"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ConfServ PROD",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "pl",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8071/cholecystitis/prod",
+					"host": [
+						"localhost"
+					],
+					"port": "8071",
+					"path": [
+						"cholecystitis",
+						"prod"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh from ConfServ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "pl",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/actuator/refresh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"refresh"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
