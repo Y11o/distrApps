@@ -40,7 +40,7 @@ public class CholecystitisService {
 
     public List<Cholecystitis> getByHospitalNameAndComplicationsAndPatientId(String hospitalName,
                                                                             String complications, Integer patientId) {
-        return cholecystitisRepository.findByHospitalNameAndComplicationsAndPatientId(
+        return cholecystitisRepository.findByHospitalNameAndComplicationsContainingAndPatientId(
                 hospitalName, complications, patientId
         );
     }

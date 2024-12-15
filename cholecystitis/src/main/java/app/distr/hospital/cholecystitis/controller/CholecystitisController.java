@@ -52,10 +52,10 @@ public class CholecystitisController {
 
     @ExceptionHandler(value = ItemNotFoundException.class)
     public ResponseEntity<?> handleItemNotFoundException(ItemNotFoundException e) {
-        ErrorResponse response = new ErrorResponse.Builder()
-                .setMessage(e.getMessage())
-                .setTimestamp(System.currentTimeMillis())
-                .build();
+        ErrorResponse response = new ErrorResponse(
+                e.getMessage(),
+                System.currentTimeMillis()
+        );
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
 }

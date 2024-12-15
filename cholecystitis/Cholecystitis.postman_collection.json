@@ -1,0 +1,365 @@
+{
+	"info": {
+		"_postman_id": "c54be38f-30ff-40b3-8d29-56720ee3fbb4",
+		"name": "Cholecystitis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34953447"
+	},
+	"item": [
+		{
+			"name": "All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/hospitals/mariinsky/cholecystitis",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hospitals",
+						"mariinsky",
+						"cholecystitis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "By patientId and complication",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/hospitals/mariinsky/cholecystitis/152/нет",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hospitals",
+						"mariinsky",
+						"cholecystitis",
+						"152",
+						"нет"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example 1 Before PUT",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/hospitals/mariinsky/cholecystitis/152/нет",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospitals",
+								"mariinsky",
+								"cholecystitis",
+								"152",
+								"нет"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 15 Dec 2024 00:22:19 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"hospitalName\": \"mariinsky\",\n        \"patientId\": 152,\n        \"treatmentType\": \"хирургическое\",\n        \"hasGallstones\": true,\n        \"severity\": \"хроническое\",\n        \"complications\": \"воспаление\",\n        \"infected\": false\n    }\n]"
+				},
+				{
+					"name": "Example 2 After PUT",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/hospitals/mariinsky/cholecystitis/152/воспаление",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospitals",
+								"mariinsky",
+								"cholecystitis",
+								"152",
+								"воспаление"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 15 Dec 2024 00:22:19 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"hospitalName\": \"mariinsky\",\n        \"patientId\": 152,\n        \"treatmentType\": \"хирургическое\",\n        \"hasGallstones\": true,\n        \"severity\": \"хроническое\",\n        \"complications\": \"воспаление\",\n        \"infected\": false\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"patientId\": 152,\r\n    \"treatmentType\": \"хирургическое\",\r\n    \"hasGallstones\": true,\r\n    \"severity\": \"хроническое\",\r\n    \"isInfected\": false,\r\n    \"complications\": \"нет\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/hospitals/mariinsky/cholecystitis",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hospitals",
+						"mariinsky",
+						"cholecystitis"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patientId\": 152,\r\n    \"treatmentType\": \"хирургическое\",\r\n    \"hasGallstones\": true,\r\n    \"severity\": \"хроническое\",\r\n    \"isInfected\": false,\r\n    \"complications\": \"нет\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/hospitals/mariinsky/cholecystitis",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospitals",
+								"mariinsky",
+								"cholecystitis"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "229"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 15 Dec 2024 00:20:10 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "This is the post and the object is: Cholecystitis(id=1, hospitalName=mariinsky, patientId=152, treatmentType=хирургическое, hasGallstones=true, severity=хроническое, isInfected=false, complications=нет)"
+				}
+			]
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"hospitalName\": \"mariinsky\",\r\n    \"patientId\": 152,\r\n    \"treatmentType\": \"хирургическое\",\r\n    \"hasGallstones\": true,\r\n    \"severity\": \"хроническое\",\r\n    \"isInfected\": false,\r\n    \"complications\": \"воспаление\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/hospitals/mariinsky/cholecystitis",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hospitals",
+						"mariinsky",
+						"cholecystitis"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"hospitalName\": \"mariinsky\",\r\n    \"patientId\": 152,\r\n    \"treatmentType\": \"хирургическое\",\r\n    \"hasGallstones\": true,\r\n    \"severity\": \"хроническое\",\r\n    \"isInfected\": false,\r\n    \"complications\": \"воспаление\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/hospitals/mariinsky/cholecystitis",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospitals",
+								"mariinsky",
+								"cholecystitis"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "By Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/hospitals/mariinsky/cholecystitis/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hospitals",
+						"mariinsky",
+						"cholecystitis",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/hospitals/mariinsky/cholecystitis/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospitals",
+								"mariinsky",
+								"cholecystitis",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "245"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 15 Dec 2024 00:25:24 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "This is the delete and the object is: Cholecystitis(id=1, hospitalName=mariinsky, patientId=152, treatmentType=хирургическое, hasGallstones=true, severity=хроническое, isInfected=false, complications=воспаление)"
+				}
+			]
+		}
+	]
+}

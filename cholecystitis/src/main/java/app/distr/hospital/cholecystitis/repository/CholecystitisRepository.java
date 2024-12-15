@@ -15,7 +15,7 @@ public interface CholecystitisRepository extends CrudRepository<Cholecystitis, I
     @Override
     List<Cholecystitis> findAll();
 
-    List<Cholecystitis> findByHospitalNameAndComplicationsAndPatientId(String hospitalName,
+    List<Cholecystitis> findByHospitalNameAndComplicationsContainingAndPatientId(String hospitalName,
                                                                       String complications,
                                                                       Integer patientId);
 }

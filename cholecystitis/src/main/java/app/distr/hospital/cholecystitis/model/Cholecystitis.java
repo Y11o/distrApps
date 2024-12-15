@@ -43,12 +43,4 @@ public class Cholecystitis {
      *  воспаление поджелудочной железы, желчных протоков, желтуха */
     @Column(name = "complications")
     private String complications;
-
-    public void setHospitalName(String hospitalName) {
-        this.hospitalName = hospitalName;
-    }
-
-    public Integer getId() {
-        return this.id;
-    }
 }
