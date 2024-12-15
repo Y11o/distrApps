@@ -149,7 +149,13 @@
 			"name": "Create",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "pl",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n    \"patientId\": 152,\r\n    \"treatmentType\": \"хирургическое\",\r\n    \"hasGallstones\": true,\r\n    \"severity\": \"хроническое\",\r\n    \"isInfected\": false,\r\n    \"complications\": \"нет\"\r\n}",
@@ -234,7 +240,13 @@
 			"name": "Update",
 			"request": {
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "rus",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n    \"id\": 1,\r\n    \"hospitalName\": \"mariinsky\",\r\n    \"patientId\": 152,\r\n    \"treatmentType\": \"хирургическое\",\r\n    \"hasGallstones\": true,\r\n    \"severity\": \"хроническое\",\r\n    \"isInfected\": false,\r\n    \"complications\": \"воспаление\"\r\n}",
@@ -289,6 +301,67 @@
 					"header": null,
 					"cookie": [],
 					"body": null
+				},
+				{
+					"name": "Example RU",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "rus",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"hospitalName\": \"mariinsky\",\r\n    \"patientId\": 152,\r\n    \"treatmentType\": \"хирургическое\",\r\n    \"hasGallstones\": true,\r\n    \"severity\": \"хроническое\",\r\n    \"isInfected\": false,\r\n    \"complications\": \"воспаление\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/hospitals/mariinsky/cholecystitis",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospitals",
+								"mariinsky",
+								"cholecystitis"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 15 Dec 2024 01:12:54 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Запись о пациенте с холециститом с идентификатором: 3 не обнаружена!\",\n    \"timestamp\": 1734225174528\n}"
 				}
 			]
 		},
@@ -296,7 +369,13 @@
 			"name": "By Id",
 			"request": {
 				"method": "DELETE",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "localhost:8080/hospitals/mariinsky/cholecystitis/1",
 					"host": [
@@ -358,6 +437,59 @@
 					],
 					"cookie": [],
 					"body": "This is the delete and the object is: Cholecystitis(id=1, hospitalName=mariinsky, patientId=152, treatmentType=хирургическое, hasGallstones=true, severity=хроническое, isInfected=false, complications=воспаление)"
+				},
+				{
+					"name": "Example EN",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/hospitals/mariinsky/cholecystitis/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospitals",
+								"mariinsky",
+								"cholecystitis",
+								"1"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 15 Dec 2024 01:13:10 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Сholecystitis with id: 1 was not found!\",\n    \"timestamp\": 1734225190813\n}"
 				}
 			]
 		}
